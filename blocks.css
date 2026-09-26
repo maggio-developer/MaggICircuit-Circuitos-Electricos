@@ -1,0 +1,235 @@
+*{
+    user-select: none;
+    transition: all 0.2s;
+}
+:root {
+    --color-cables: #9326d1;
+    --color-fuentes: #c5206d;
+    --color-luces: #d6770b;
+    --color-funciones: #eeb539;
+}
+.pointer{
+    cursor:pointer;
+}
+body{
+    overflow: hidden;
+}
+canvas{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-canvas);
+}
+
+#presets{
+    background-color: var(--color-principal);
+    width: 20vw;
+    height: 30vh;
+    position: absolute;
+    right: 0;
+    top: 9vh;
+    display: none;
+}
+#presets.open {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#presets a{
+    font-size: calc(1vw + 5px);
+    text-align: center;
+    background-color: #00000079;
+    padding: 2px;
+}
+#presets a:hover{
+    background-color: #0000004b;
+    cursor: pointer;
+}
+#presets a:active{
+    background-color: #a872724b;
+    cursor: pointer;
+}
+
+#menu{
+    width: calc(8vw + 100px);
+    height: calc(55vh + 10px);
+    background:none;
+    position:fixed;
+    left: 20px;
+    bottom: calc(12vh + 70px);
+    display: grid;
+    grid-template-columns: 1fr;
+    
+}
+
+.botonSuperior{
+    background-color: var(--color-principal);
+    position:absolute;
+    width: 100%;
+    height: 50px;
+    font-size: calc(1.25vw + 15px);
+    border: 0;
+    transition:all 0.1s;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#volverPrincipal{
+    background-color: #f1d533;
+    top: -50px;
+}
+
+#verCargas{
+    bottom: -50px;
+}
+
+.noVerCargas{
+    background-color: #f36a47;
+}
+
+
+.botonSuperior:hover{
+    scale: 1.02;
+    font-size: calc(1.3vw + 15px);
+}
+
+#menuPrincipal{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background:none;
+    position: absolute;
+}
+
+.cables{
+    background-color: var(--color-cables);
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--color-cables), black 20%) transparent;
+}
+.fuentes{
+    background-color: var(--color-fuentes);
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--color-fuentes), black 20%) transparent;
+}
+.luces{
+    background-color: var(--color-luces);
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--color-luces), black 20%) transparent;
+}
+.funciones{
+    background-color: var(--color-funciones);
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--color-funciones), black 20%) transparent;
+}
+
+#menuPrincipal button {
+    width: 100%;
+    height: 25%;
+    border: 0;
+    transition: 0.2s all;
+    font-size: calc(1.25vw + 15px);
+}
+
+#menuPrincipal button:hover {
+    translate: 2vw;
+}
+
+#menuPrincipal button:active {
+    scale: 1.03;
+    font-size: calc(1.75vw + 15px);
+}
+
+.menuObjetos{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.menuObjetos .img{
+    width: calc(12vh + 6px);
+    min-width: 100px;
+    min-height: 100px;
+    margin: 10px;
+    height: calc(12vh + 6px);
+    background: none;
+    transition: 0.2s all;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.fondoOscuro{
+    background: local !important;
+    background-color: hsla(0, 0%, 0%, 0.596) !important;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    overflow: hidden;
+}
+
+.menuObjetos .img:hover{
+    width: calc(13vh + 6px);
+    height:  calc(13vh + 6px);
+}
+
+.menuObjetos .img:active{
+    width: calc(14vh + 6px);
+    height:  calc(14vh + 6px);
+}
+
+#verFunciones{
+    background-color: var(--color-principal);
+    width: calc(100vw - 90px);
+    height: 70px;
+    bottom: 0;
+    right: 0;
+    position:fixed;
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 20px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #175c0e transparent;
+}
+
+#verFunciones button{
+    background-color: var(--color-secundario);
+    border: 0;
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 1.4rem;
+    font-weight: 800;
+    width: auto;
+    height: 70%;
+    margin: 0 15px;
+    text-wrap-mode:nowrap;
+    transition: 0.2s all;
+}
+
+#verFunciones button:hover{
+    background-color: var(--color-terciario);
+    cursor: pointer;
+}
+
+#verFunciones button:active{
+    background-color: var(--color-terciario-claro);
+}
+
+
+.hidden{
+    visibility: hidden;
+}
+.active{
+    visibility: visible;
+}

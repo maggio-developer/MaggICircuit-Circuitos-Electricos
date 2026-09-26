@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIC MaggICircuit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="page.css">
+    <link rel="stylesheet" href="blocks.css">
+</head>
+<body>
+    <header>
+        <div class="title-container">
+            <h1>MaggICircuit</h1>
+            <input style="margin-left:1vw; background-color: #fff; color:#000;" placeholder="Frecuencia" type="number" name="Tiempo de actualizacion de cargas" id="tiempoCargas">
+        </div>
+        <div class="options-container">
+            <a id="guardarProyecto">Guardar</a>
+            <a id="cargarProyecto">Cargar</a>
+            <input type="file" id="fileInput" accept=".icircuit">
+            <a id="presetsButton">Presets</a>
+            <div id="presets">
+                <a id="presetCompuertas">Compuertas lógicas</a>
+                <a id="presetContador">Contador 4 bits</a>
+                <a id="presetSemaforo">Semaforo 4 bits</a>
+                <a id="presetALU">ALU 4 bits</a>
+                <a id="presetCPU4BitsSinRam">CPU 4 bits (sin ram)</a>
+            </div>
+        </div>
+    </header>
+    <canvas id="canvas"></canvas>
+    <menu id="menu">
+        <section id="menuPrincipal" class="active">
+            <button id="menuPrincipalCables" class="cables pointer">Cables</button>
+            <button id="menuPrincipalFuentes" class="fuentes pointer">Fuentes</button>
+            <button id="menuPrincipalLuces" class="luces pointer">Luces</button>
+            <button id="menuPrincipalFunciones" class="funciones pointer">Funciones</button>
+        </section>
+        <section id="menuObjetosCables" class="hidden menuObjetos cables">
+            <img src="assets/cables/cableComun.svg" class="img pointer" id="cableComun">
+            <img src="assets/cables/cable2Salidas.svg" class="img pointer" id="cable2Salidas">
+            <img src="assets/cables/cable2Entradas.svg" class="img pointer" id="cable2Entradas">
+            <img src="assets/cables/cableAnd.svg" class="img pointer" id="cableAnd">
+        </section>
+        <section id="menuObjetosFuentes" class="hidden menuObjetos fuentes">
+            <img src="assets/fuentes/fuente.svg" class="img pointer" id="fuente">
+            <img src="assets/fuentes/boton.svg" class="img pointer" id="boton">
+            <img src="assets/fuentes/cableNot.svg" class="img pointer" id="cableNot">
+        </section>
+        <section id="menuObjetosLuces" class="hidden menuObjetos luces">
+            <img src="assets/luces/lampara.svg" class="img pointer" id="lampara">
+            <img src="assets/luces/lampara3Entradas.svg" class="img pointer" id="lampara3Colores">
+        </section>
+        <section id="menuObjetosFunciones" class="hidden menuObjetos funciones">
+            
+        </section>
+        <button id="volverPrincipal" class="hidden botonSuperior">Volver</button>
+        <button id="verCargas" class="botonSuperior pointer">Ver Cargas</button>
+    </menu>
+    <section id="verFunciones">
+        <button id="añadirFuncion" class="pointer">| + |</button>
+        <button id="mainFuncion" class="pointer">Main</button>
+    </section>
+    <script src="code.js"></script>
+</body>
+</html>
